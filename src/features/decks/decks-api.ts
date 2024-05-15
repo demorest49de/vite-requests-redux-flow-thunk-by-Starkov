@@ -17,7 +17,7 @@ type AuthorType = {
   name: string
 }
 
-export type ItemsType = {
+export type DeckItemType = {
   author: AuthorType
   id: string
   userId: string
@@ -37,6 +37,6 @@ type PaginationType = {
 }
 
 export type  DeckTypeDTO = {
-  'items': Array<ItemsType>,
+  'items': Array<DeckItemType>,
   'pagination': PaginationType
 }
