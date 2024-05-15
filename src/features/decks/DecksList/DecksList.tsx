@@ -10,8 +10,8 @@ export const DecksList = () => {
   const decks = useAppSelector((state) => state.decksReducer.decks)
   const dispatch = useAppDispatch()
   useEffect(() => {
-    fetchDecksTC()
-  }, [dispatch])
+    dispatch(fetchDecksTC())
+  }, [])
   console.log(' decks: ', decks)
   return (
     <ul className={s.list}>
