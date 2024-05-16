@@ -10,6 +10,10 @@ export const instance = axios.create({
 
 export const deckApi = {
   getDecks: () => instance.get<DeckTypeDTO>('/decks'),
+  addDeck: (name: string) => {
+    console.log(' name: ', name)
+    return instance.post<DeckItemType>('/decks', { name })
+  },
 }
 
 type AuthorType = {
@@ -36,7 +40,7 @@ type PaginationType = {
   totalItems: number
 }
 
-export type  DeckTypeDTO = {
-  'items': Array<DeckItemType>,
-  'pagination': PaginationType
+export type DeckTypeDTO = {
+  items: Array<DeckItemType>
+  pagination: PaginationType
 }
