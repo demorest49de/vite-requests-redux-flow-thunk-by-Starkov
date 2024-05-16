@@ -11,8 +11,8 @@ export const fetchDecksTC = () => {
   }
 }
 
-export const addDeckTC = (title: string) => (dispatch: AppDispatch) => {
-  deckApi.addDeck(title)
+export const addDeckTC = (title: string) => async (dispatch: AppDispatch) => {
+  return deckApi.addDeck(title)
     .then(res => {
       console.log(' res: ', res.data)
       dispatch(addDeckAC(res.data))
