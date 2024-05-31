@@ -37,7 +37,7 @@ export const addDeckAC = (deck: DeckItemType) => {
   return {
     type: 'ADD-DECK' as const,
     deck: deck,
-  }
+  } as const
 }
 
 export type DecksActions = SetDecksAT | AddDeckAT
